@@ -2,4 +2,6 @@ var today = new Date();
 var cjTracking = ['cjevent'];
 var purchaseURL = 'newtvorder.aspx';
 
-updateURLs(cjTracking, purchaseURL, ['PID', 'cjevent']);
+waitFor(window.initLinks).then(
+    initLinks(cjTracking, purchaseURL, ['PID', 'cjevent'])
+);
