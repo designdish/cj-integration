@@ -5,7 +5,16 @@ var initializeCj = function() {
     var tempCj = getValue('cjevent');
     var mutatedPID = tempPID + '-cjevent-' + tempCj;
 
+    if (tempPID.indexOf('-cjevent-') != -1) {
+        if (isEqual(mutatedPID, tempPID) === false) {
+            tempCj = getParameterByName('cjevent');
+            tempPID = getParameterByName('PID');
+            setCookie('PID', mutatedPID);
+        }
+    }
+
     setCookie('PID', mutatedPID);
+
     // initLinks(cjTracking, purchaseURL, mutatedPID);
     updateURLs(cjTracking, purchaseURL, ['PID', 'cjevent']);
 };
