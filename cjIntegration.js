@@ -6,8 +6,8 @@ var initializeCj = function() {
     var mutatedPID;
     if (tempPID.indexOf('-cjevent-') != -1) {
         if (isEqual(mutatedPID, tempPID) === false) {
-            var oldPID = getSubParameter('PID', '', '-cjevent-');
-            var oldCj = getSubParameter('PID', '-cjevent-', '');
+            var oldPID = getSubParameter(tempPID, '', '-cjevent-')[0];
+            var oldCj = getSubParameter(tempPID, '-cjevent-', '')[0];
             var newPID = getParameterByName('PID');
             var newCj = getParameterByName('cjevent');
             if (isEqual(newPID, oldPID) === false) {
